@@ -1,50 +1,314 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
-
-<!doctype html>
+--- 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auto Mobility Lab</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      a {
+        text-decoration: none;
+      }
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #222;
+        padding: 1rem 2rem;
+      }
+      nav .logo a {
+        color: #fff;
+        font-size: 1.5rem;
+      }
+      nav .menu a {
+        color: #fff;
+        font-size: 1rem;
+        margin-left: 1.5rem;
+      }
+      /* Hero Section */
+      .hero {
+        background: url('hero.jpg') no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        padding: 0 2rem;
+      }
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      section {
+        padding: 4rem 0;
+      }
+      h1, h2, h3 {
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1.5rem;
+      }
+      /* Buttons */
+      .btn {
+        background: #e8491d;
+        color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+      .btn:hover {
+        background: #cf3e14;
+      }
+      /* Grid Layout */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      /* Footer */
+      footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 2rem 0;
+      }
+      footer a {
+        color: #fff;
+      }
+      /* Contact Form Styles */
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">
+        <a href="#">Auto Mobility Lab</a>
+      </div>
+      <div class="menu">
+        <a href="#commitment">Our Commitment</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#advantage">Advantage</a>
+        <a href="#technology">Technology</a>
+        <a href="#promise">Our Promise</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Auto Mobility Lab: Powering Seamless Rides, Every Time.</h1>
+        <p>
+          We move your city. Auto Mobility Lab partners with cities and agencies to provide reliable, efficient, and technologically advanced transportation solutions. We power thousands of rides every day, ensuring on-time performance and exceptional support in every market we serve.
+        </p>
+        <a href="#demo" class="btn">Request a Demo</a>
+      </div>
+    </section>
+
+    <!-- Our Commitment -->
+    <section id="commitment">
+      <div class="container">
+        <h2>Our Commitment</h2>
+        <div class="grid">
+          <div>
+            <h3>Unwavering Reliability</h3>
+            <p>
+              We leverage cutting-edge technology to guarantee on-time arrivals and departures, minimizing disruptions and maximizing efficiency.
+            </p>
+          </div>
+          <div>
+            <h3>Exceptional Support</h3>
+            <p>
+              Our dedicated support team is available around the clock to assist with any needs, ensuring a smooth and stress-free experience.
+            </p>
+          </div>
+          <div>
+            <h3>Advanced Technology</h3>
+            <p>
+              We utilize a proprietary platform that optimizes routes, manages schedules, and adapts to real-time conditions, ensuring the best possible service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Our Solutions -->
+    <section id="solutions">
+      <div class="container">
+        <h2>Explore Our Solutions</h2>
+        <div class="grid">
+          <div>
+            <h3>Intelligent Routing &amp; Scheduling</h3>
+            <p>
+              Our system dynamically plans and adjusts routes based on live traffic, ensuring the fastest and most efficient journeys.
+            </p>
+          </div>
+          <div>
+            <h3>Real-Time Visibility &amp; Control</h3>
+            <p>
+              Stay informed with up-to-the-minute tracking of vehicles, drivers, and passengers.
+            </p>
+          </div>
+          <div>
+            <h3>Seamless Integrations</h3>
+            <p>
+              Our platform integrates seamlessly with existing systems, simplifying workflows and maximizing efficiency.
+            </p>
+          </div>
+          <div>
+            <h3>Comprehensive Reporting &amp; Analytics</h3>
+            <p>
+              Gain valuable insights into performance with detailed reports and analytics.
+            </p>
+          </div>
+          <div>
+            <h3>Dedicated Support</h3>
+            <p>
+              Our expert support team is available 24/7 to provide assistance and ensure a smooth experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantage Section -->
+    <section id="advantage">
+      <div class="container">
+        <h2>The Auto Mobility Lab Advantage</h2>
+        <div class="grid">
+          <div>
+            <h3>Unmatched On-Time Performance</h3>
+            <p>
+              We consistently exceed industry standards for on-time arrivals, minimizing wait times and maximizing passenger satisfaction.
+            </p>
+          </div>
+          <div>
+            <h3>Proactive Problem Solving</h3>
+            <p>
+              Our system anticipates potential issues and automatically adjusts plans to mitigate disruptions.
+            </p>
+          </div>
+          <div>
+            <h3>Scalable Solutions</h3>
+            <p>
+              We can adapt to the changing needs of your city or agency, ensuring seamless service even during peak demand.
+            </p>
+          </div>
+          <div>
+            <h3>Data-Driven Optimization</h3>
+            <p>
+              We continuously analyze data to identify areas for improvement and further optimize our operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Request -->
+    <section id="demo">
+      <div class="container" style="text-align: center;">
+        <h2>Ready to Transform Your Transportation Network?</h2>
+        <a href="#contact" class="btn">Request a Demo</a>
+      </div>
+    </section>
+
+    <!-- Our Technology -->
+    <section id="technology">
+      <div class="container">
+        <h2>Our Technology</h2>
+        <div class="grid">
+          <div>
+            <h3>Dynamic Routing</h3>
+            <p>
+              Real-time traffic data and predictive algorithms ensure the most efficient routes.
+            </p>
+          </div>
+          <div>
+            <h3>Automated Dispatch</h3>
+            <p>
+              Intelligent dispatching systems optimize vehicle utilization and minimize response times.
+            </p>
+          </div>
+          <div>
+            <h3>Mobile Driver App</h3>
+            <p>
+              Empowering drivers with real-time information, navigation, and communication tools.
+            </p>
+          </div>
+          <div>
+            <h3>Passenger Communication</h3>
+            <p>
+              Providing passengers with real-time updates, ETAs, and direct communication channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Promise -->
+    <section id="promise">
+      <div class="container">
+        <h2>Our Promise</h2>
+        <p>
+          At Auto Mobility Lab, we are committed to providing the highest quality transportation solutions. We combine cutting-edge technology with a dedicated team to deliver reliable, efficient, and passenger-centric services. We are more than just a transportation provider; we are a partner in building smarter, more connected cities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Auto Mobility Lab. All rights reserved.</p>
+        <p>
+          Contact: <a href="mailto:info@automobilitylab.com">info@automobilitylab.com</a> |
+          Follow us on <a href="#">Social Media</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple contact form handler
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Thank you for your message. We will get back to you soon!");
+        this.reset();
+      });
+    </script>
+  </body>
 </html>
